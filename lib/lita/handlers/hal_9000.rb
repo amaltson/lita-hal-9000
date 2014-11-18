@@ -10,7 +10,7 @@ module Lita
                    else
                      Source.new(user: message.user, private_message: true)
                    end
-          robot.send_message(target, "I'm sorry, I can't do that @#{message.user.mention_name}. http://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/HAL9000.svg/200px-HAL9000.svg.png")
+          robot.send_message(target, "I'm sorry, I can't do that @#{message.user.mention_name} http://bit.ly/11wwIP2")
         end
       end
     end
