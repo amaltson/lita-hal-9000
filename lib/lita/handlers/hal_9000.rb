@@ -9,7 +9,8 @@ module Lita
         message = payload[:message]
         if message.command?
           target = reply_target(message: message)
-          robot.send_message(target, "I'm sorry, I can't do that @#{message.user.mention_name} http://bit.ly/11wwIP2")
+          robot.send_message(target, format_reply(
+            name: message.user.mention_name))
         end
       end
 
@@ -19,6 +20,10 @@ module Lita
         else
           Source.new(room: message.source.room)
         end
+      end
+
+      def format_reply(name:)
+        "I'm sorry, I can't do that @#{name} http://bit.ly/11wwIP2"
       end
 
     end
