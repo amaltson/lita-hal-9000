@@ -10,7 +10,7 @@ module Lita
         if should_reply?(message: message)
           target = reply_target(message: message)
           robot.send_message(target, format_reply(
-            name: message.user.mention_name))
+            message: message))
         end
       end
 
@@ -26,8 +26,9 @@ module Lita
         end
       end
 
-      def format_reply(name:)
-        "I'm sorry, I can't do that @#{name} http://bit.ly/11wwIP2"
+      def format_reply(message:)
+        "I'm sorry, I can't do that @#{message.user.mention_name} " \
+        "http://bit.ly/11wwIP2"
       end
 
     end
