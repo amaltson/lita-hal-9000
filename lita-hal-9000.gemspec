@@ -2,10 +2,12 @@ Gem::Specification.new do |spec|
   spec.name          = "lita-hal-9000"
   spec.version       = "0.0.1"
   spec.authors       = ["Arthur Maltson"]
-  spec.email         = ["arthur_maltson@otpp.com"]
-  spec.description   = %q{TODO: Add a description}
-  spec.summary       = %q{TODO: Add a summary}
-  spec.homepage      = "TODO: Add a homepage"
+  spec.email         = ["arthur@maltson.com"]
+  spec.description   = "Lita handler to make your bot more like HAL-9000"
+  spec.summary       = %q{This is a Lita handler that listens for the
+  :unhandled_message event. If the unhandled message is a command to
+  the bot, the bot will output a HAL-9000 like message.}
+  spec.homepage      = "https://github.com/amaltson/lita-hal-9000"
   spec.license       = "MIT"
   spec.metadata      = { "lita_plugin_type" => "handler" }
 
