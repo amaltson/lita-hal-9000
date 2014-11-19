@@ -8,13 +8,16 @@ module Lita
       def handle_unhandled(payload:)
         message = payload[:message]
         if message.command?
-          private_message = message.source.private_message
-          target = unless private_message
-                     Source.new(room: message.source.room)
-                   else
-                     Source.new(user: message.user, private_message: true)
-                   end
+          target = reply_target(message: message)
           robot.send_message(target, "I'm sorry, I can't do that @#{message.user.mention_name} http://bit.ly/11wwIP2")
+        end
+      end
+
+      def reply_target(message:)
+        if message.source.private_message
+          Source.new(user: message.user, private_message: true)
+        else
+          Source.new(room: message.source.room)
         end
       end
 
