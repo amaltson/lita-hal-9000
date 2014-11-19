@@ -15,7 +15,7 @@ module Lita
       end
 
       def should_reply?(message:)
-        message.command?
+        message.command? && message.match(/^@#{robot.name}/)
       end
 
       def reply_target(message:)
