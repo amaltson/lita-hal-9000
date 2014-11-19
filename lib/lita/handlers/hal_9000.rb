@@ -7,11 +7,15 @@ module Lita
 
       def handle_unhandled(payload:)
         message = payload[:message]
-        if message.command?
+        if should_reply?(message: message)
           target = reply_target(message: message)
           robot.send_message(target, format_reply(
             name: message.user.mention_name))
         end
+      end
+
+      def should_reply?(message:)
+        message.command?
       end
 
       def reply_target(message:)
