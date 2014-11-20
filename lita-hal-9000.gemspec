@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "lita-hal-9000"
-  spec.version       = "0.1.0"
+  spec.version       = "0.1.1"
   spec.authors       = ["Arthur Maltson"]
   spec.email         = ["arthur@maltson.com"]
   spec.description   = "Lita handler to make your bot more like HAL-9000"
