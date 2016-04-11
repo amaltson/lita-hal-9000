@@ -1,7 +1,7 @@
 module Lita
   module Handlers
     class Hal9000 < Handler
-      config :hal_image, default: 'http://bit.ly/1SHSAcQ'
+      config :hal_image, default: 'http://bit.ly/1WmwDpt'
 
       on(:unhandled_message) do |payload|
         handle_unhandled(payload: payload)
