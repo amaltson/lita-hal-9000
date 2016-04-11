@@ -1,6 +1,8 @@
 module Lita
   module Handlers
     class Hal9000 < Handler
+      config :hal_image, default: 'http://bit.ly/1SHSAcQ'
+
       on(:unhandled_message) do |payload|
         handle_unhandled(payload: payload)
       end
@@ -27,8 +29,8 @@ module Lita
       end
 
       def format_reply(message:)
-        "I'm sorry, I can't do that @#{message.user.mention_name} " \
-          "http://bit.ly/11FZRaq"
+        "I'm sorry, I can't do that @#{message.user.mention_name} " +
+          config.hal_image
       end
 
     end
